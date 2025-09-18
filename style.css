@@ -1,0 +1,237 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  width: 100%;
+}
+
+.header-presentacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: #222;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.texto-presentacion {
+  text-align: center;
+  flex: 1;
+}
+
+.texto-presentacion h1 {
+  margin: 10px 0;
+  font-size: 2.5rem;
+}
+
+.texto-presentacion p {
+  margin: 5px 0;
+  font-size: 1.2rem;
+}
+
+.foto-presentacion {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.foto-circular {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transform: translateY(-20px);
+}
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #fca3c5;
+}
+
+/* Secciones */
+section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* PROYECTOS */
+#proyectos {
+  background: #e9e7e5;
+}
+
+#proyectos h2 {
+  margin-bottom: 30px;
+}
+
+/* Grid de proyectos responsivo */
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 20px;
+  justify-items: center; /* Centra cada proyecto dentro de su celda */
+  padding: 20px;
+}
+
+/* Responsivo: una columna en móviles */
+@media screen and (max-width: 800px) {
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ajuste de los proyectos */
+.proyecto {
+  width: 100%;         /* Ocupa todo el ancho de la celda */
+  max-width: 400px;    /* No se haga más grande que 400px */
+  height: 320px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: auto;
+}
+
+.proyecto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* Imagen de fondo de cada proyecto */
+.proyecto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  border-radius: 10px;
+  z-index: 0;
+  transform: scale(1) translateY(0);
+}
+
+.proyecto:hover::before {
+  opacity: 0.6;
+  transform: scale(1.15) translateY(-5px);
+}
+
+/* Fondos específicos */
+.proyecto.scrap-online::before { background-image: url('Scrap2.png'); }
+.proyecto.Mesa-control::before { background-image: url('Mesa1.png'); }
+.proyecto.AjusteEspecial::before { background-image: url('Ajuste.png'); }
+.proyecto.Ticket::before { background-image: url('Ticket.png'); }
+.proyecto.Tinaco::before { background-image: url('Tinaco.png'); }
+
+/* Texto encima de la imagen */
+.proyecto h3,
+.proyecto p,
+.proyecto a {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botón */
+.btn-powerpoint {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #f89809;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 1;
+  transition: background-color 0.3s;
+}
+
+.btn-powerpoint:hover {
+  background-color: #f8b600;
+}
+
+/* CONTACTO */
+#contacto {
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.contacto-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.contacto-links a img {
+  width: 50px;
+  transition: transform 0.3s;
+}
+
+.contacto-links a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-contacto {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
